@@ -1,0 +1,9 @@
+[book]
+authors = ["Daniel Stenberg"]
+language = "tr"
+src = "."
+title = "Her Yönüyle curl"
+
+[output.html.fold]
+enable = true     # whether or not to enable section folding
+level = 0         # the depth to start folding

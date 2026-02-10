@@ -1,0 +1,440 @@
+%{json}
+--alt-svc
+--anyauth
+--append
+--aws-sigv4
+--basic
+--ca-native
+--compressed
+--compressed-ssh
+--connect-timeout
+--connect-to
+--data
+--data-binary
+--data-urlencode
+--etag-compare
+--etag-save
+--expand
+--fail
+--fail-with-body
+--ftp-method
+--ftp-pasv
+--ftp-port
+--ftp-skip-pasv-ip
+--get
+--happy-eyeballs-timeout-ms
+--haproxy-clientip
+--haproxy-protocol
+--header
+--hsts
+--http0.9
+--http1.1
+--http2
+--http2-prior-knowledge
+--http3
+--http3-only
+--ip-tos
+--ipfs-gateway
+--json
+--keepalive-cnt
+--keepalive-time
+--libcurl
+--limit-rate
+--location
+--location
+--max-filesize
+--max-time
+--metalink
+--mptcp
+--negotiate
+--netrc-file
+--netrc-optional
+--no-clobber
+--no-eprt
+--no-epsv
+--no-keepalive
+--ntlm
+--output-dir
+--parallel
+--parallel-immediate
+--parallel-max
+--path-as-is
+--post301
+--post302
+--post303
+--proxy
+--proxy-ca-native
+--proxy-http2
+--proxy-user
+--proxy1.0
+--proxytunnel
+--quote
+--rate
+--remote-name-all
+--remove-on-error
+--resolve
+--retry
+--retry-all-errors
+--retry-connrefused
+--retry-delay
+--retry-max-time
+--show-error
+--silent
+--skip-existing
+--socks4
+--socks4a
+--socks5
+--socks5-hostname
+--speed-limit
+--speed-time
+--tftp-blksize
+--tftp-no-options
+--time-cond
+--tr-encoding
+--trace
+--trace-ascii
+--trace-config
+--trace-ids
+--trace-time
+--url-query
+--variable
+--verbose
+--version
+--vlan-priority
+--write-out
+-b
+-c
+-d
+-F
+-K
+-L
+-O
+-Q
+-T
+-U
+-u
+-X
+-x
+-Z
+-z
+.netrc
+/etc/hosts
+<curl/curl.h>
+ALPN
+apt
+Arch Linux
+AWS sigv4
+BearSSL
+Bağlayıcılar
+BoringSSL
+brotli
+bugreports
+c-ares
+C89
+CA
+CA cert cache
+Chrome
+clone
+code of conduct
+configure
+Bağlantı önbelleği
+Bağlantı havuzu
+Bağlantı yeniden kullanımı
+İçerik Kodlama
+contribute
+Contributing
+Çerez motoru
+Çerezler
+copyright
+curl-announce
+curl-library
+curl-users
+curl_easy_cleanup
+curl_easy_getinfo
+curl_easy_init
+curl_easy_option_by_id
+curl_easy_option_by_next
+curl_easy_option_by_next
+curl_easy_perform
+curl_easy_reset
+curl_easy_setopt
+curl_global_cleanup
+curl_global_init
+curl_global_trace
+CURL_IPRESOLVE_V6
+CURL_MAX_WRITE_SIZE
+curl_mime_addpart
+curl_mime_filedata
+curl_mime_init
+curl_mime_name
+curl_multi_add_handle
+curl_multi_cleanup
+curl_multi_fdset
+curl_multi_info_read
+curl_multi_init
+curl_multi_remove_handle
+curl_multi_remove_handle
+curl_multi_setopt
+curl_multi_socket_action
+curl_multi_timeout
+curl_multi_wait
+curl_off_t
+CURL_SOCKET_TIMEOUT
+CURL_SSL_BACKEND
+curl_url
+curl_url_cleanup
+curl_url_dup
+curl_url_get
+curl_url_set
+curl_version_info
+CURLE_ABORTED_BY_CALLBACK
+CURLHSTS_ENABLE
+CURLHSTS_READONLYFILE
+CURLINFO_CERTINFO
+CURLINFO_CONN_ID
+CURLINFO_CONTENT_TYPE
+CURLINFO_EFFECTIVE_URL
+CURLINFO_FILETIME
+CURLINFO_TOTAL_TIME_T
+CURLINFO_XFER_ID
+CURLMOPT_PIPELINING
+CURLMOPT_SOCKETFUNCTION
+CURLMOPT_TIMERFUNCTION
+CURLOPT_ALTSVC
+CURLOPT_ALTSVC_CTRL
+CURLOPT_CA_CACHE_TIMEOUT
+CURLOPT_CLOSESOCKETFUNCTION
+CURLOPT_CONNECTTIMEOUT
+CURLOPT_COOKIE
+CURLOPT_COOKIEFILE
+CURLOPT_COOKIEJAR
+CURLOPT_COOKIELIST
+CURLOPT_CURLU
+CURLOPT_CUSTOMREQUEST
+CURLOPT_DEBUGDATA
+CURLOPT_DEBUGFUNCTION
+CURLOPT_DNS_CACHE_TIMEOUT
+CURLOPT_DNS_INTERFACE
+CURLOPT_DNS_LOCAL_IP4
+CURLOPT_DNS_LOCAL_IP6
+CURLOPT_DNS_SERVERS
+CURLOPT_DNS_USE_GLOBAL_CACHE
+CURLOPT_ERRORBUFFER
+CURLOPT_FAILONERROR
+CURLOPT_HEADER
+CURLOPT_HEADERDATA
+CURLOPT_HEADERFUNCTION
+CURLOPT_HSTS
+CURLOPT_HSTS_CTRL
+CURLOPT_HTTPGET
+CURLOPT_HTTPHEADER
+CURLOPT_HTTPPOST
+CURLOPT_IPRESOLVE
+CURLOPT_LOCALPORT
+CURLOPT_LOCALPORTRANGE
+CURLOPT_LOW_SPEED_LIMIT
+CURLOPT_LOW_SPEED_TIME
+CURLOPT_MAXFILESIZE_LARGE
+CURLOPT_MAXREDIRS
+CURLOPT_MIMEPOST
+CURLOPT_NOBODY
+CURLOPT_NOPROGRESS
+CURLOPT_OPENSOCKETDATA
+CURLOPT_OPENSOCKETFUNCTION
+CURLOPT_PIPEWAIT
+CURLOPT_POST
+CURLOPT_POSTFIELDS
+CURLOPT_POSTFIELDSIZE
+CURLOPT_POSTREDIR
+CURLOPT_PROGRESSFUNCTION
+CURLOPT_PROXY
+CURLOPT_PROXYPORT
+CURLOPT_PROXYTYPE
+CURLOPT_READDATA
+CURLOPT_READFUNCTION
+CURLOPT_RESOLVE
+CURLOPT_SEEKDATA
+CURLOPT_SEEKFUNCTION
+CURLOPT_SOCKOPTDATA
+CURLOPT_SOCKOPTFUNCTION
+CURLOPT_SSH_KNOWNHOSTS
+CURLOPT_SSL_VERIFYHOST
+CURLOPT_SSL_VERIFYPEER
+CURLOPT_SSLVERSION
+CURLOPT_STDERR
+CURLOPT_TCP_KEEPALIVE
+CURLOPT_TCP_KEEPCNT
+CURLOPT_TCP_KEEPIDLE
+CURLOPT_TCP_KEEPINTVL
+CURLOPT_TIMEOUT
+CURLOPT_TLSAUTH_USERNAME
+CURLOPT_UPLOAD
+CURLOPT_URL
+CURLOPT_USERAGENT
+CURLOPT_VERBOSE
+CURLOPT_WRITEDATA
+CURLOPT_WRITEFUNCTION
+CURLOPT_XFERINFODATA
+CURLOPT_XFERINFOFUNCTION
+CURLUPART_FRAGMENT
+CURLUPART_HOST
+CURLUPART_PASSWORD
+CURLUPART_PATH
+CURLUPART_PORT
+CURLUPART_QUERY
+CURLUPART_USER
+debian
+Debug callback
+Geliştirme
+DICT
+Edge
+Ortam değişkenleri
+ephemeral port
+ETag
+etiquette
+event-driven
+Firefox
+Fragment
+FTPS
+Gelecek
+git
+Globbing
+GnuTLS
+Gopher
+GOPHERS
+Mutlu Gözler
+haproxy
+Başlık geri çağırımı
+homebrew
+Host:
+HSTS
+HTTP proxy
+HTTP ranges
+HTTP redirects
+HTTP Strict Transport Security
+HTTP/1.1
+HTTP/2
+HTTP/3
+HTTP/3 backend
+HttpGet
+HTTPS proxy
+IDN
+IETF
+Indentation
+International Domain Names
+IPFS
+IPv4
+IPv6
+IRC
+JavaScript
+json
+Canlı tutma
+KNOWN_BUGS
+LD_LIBRARY_PATH
+libcurl version
+libidn2
+libpsl
+libressl
+librtmp
+libssh
+libssh2
+Lisans
+MIT
+MITM-proxies
+MQTT
+mTLS
+multi-threading
+Multipath TCP
+İsim çözümleme
+nghttp2
+nix
+NPN
+openldap
+OpenSSL
+PAC
+Percent-encoding
+POP3
+Port numarası
+İlerleme geri çağırımı
+pronunciation
+Vekil sunucu
+Quic
+Aralıklar
+Okuma geri çağırımı
+redhat
+Yönlendirmeler
+RELEASE-NOTES
+Sürümler
+repository
+RFC 1436
+RFC 1738
+RFC 1939
+RFC 1945
+RFC 2229
+RFC 2246
+RFC 2326
+RFC 2595
+RFC 2616
+RFC 2818
+RFC 3207
+RFC 3501
+RFC 3986
+RFC 4217
+RFC 4511
+RFC 5321
+RFC 7838
+RFC 8314
+RFC 8446
+RFC 854
+RFC 8999
+RFC 9110
+RFC 9112
+RFC 9113
+RFC 9114
+RFC 959
+roadmap
+rpath
+RTMP
+RTSP
+rustls
+rustls-ffi
+Safari
+Schannel
+Scheme
+SCP
+Güvenlik
+SFTP
+SMTP
+SMTPS
+snapshots
+SNI
+SSH
+SSH backend
+SSL context callback
+SSLKEYLOGFILE
+STARTTLS
+TCP
+TELNET
+testing
+TFTP
+TLS
+TLS backend
+TODO
+Traffic Class
+transfer-encoding
+trurl
+Type of Service
+Ubuntu
+URL Globbing
+URL parser
+variables
+Vulnerability
+wcurl
+Wireshark
+wolfssh
+wolfSSH
+wolfSSL
+Yazma geri çağırımı
+yum
+zlib
+zstd
