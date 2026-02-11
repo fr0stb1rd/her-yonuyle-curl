@@ -1,0 +1,16 @@
+{
+  "max_errors": 5000,
+  "checks": {
+    "garner.preferred_forms": false,
+    "misc.preferred_forms": false,
+    "lexical_illusions.misc": false,
+    "annotations.misc": false,
+    "leonard.exclamation.30ppm": false,
+    "typography.symbols.curly_quotes": false,
+    "typography.symbols.ellipsis": false,
+    "typography.symbols.dots": false,
+    "typography.diacritical_marks": false,
+    "typography.symbols": false,
+    "typography.exclamation": false
+  }
+}

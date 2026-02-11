@@ -1,0 +1,53 @@
+# Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+
+name: proselint
+
+'on':
+  push:
+    branches:
+      - main
+      - '*/ci'
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  check:
+    name: 'check'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: install prereqs
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/{azure-cli.sources,microsoft-prod.list,ondrej-ubuntu-php-noble.sources}
+          sudo apt-get -o Dpkg::Use-Pty=0 update
+          sudo apt-get -o Dpkg::Use-Pty=0 install \
+            python3-proselint
+
+      - name: trim off quoted parts
+        run: find . -name "*.md" -print0 | xargs -0 -n1 .github/scripts/cleanmd.pl
+
+      # config file help: https://github.com/amperser/proselint/
+      - name: store proselint config
+        run: |
+          {
+            echo '{'
+            echo '   "checks": {'
+            echo '     "typography.diacritical_marks": false,'
+            echo '     "typography.symbols": false,'
+            echo '     "annotations.misc": false'
+            echo '   }'
+            echo '}'
+          } > $HOME/.proselintrc.json
+
+      - name: check prose
+        run: make check

@@ -1,0 +1,78 @@
+# Copyright (C) Daniel Stenberg, <daniel@haxx.se>, et al.
+# Automated release workflow for her-yonuyle-curl
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    env:
+      MDBOOK_VERSION: 0.4.36
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install prereqs
+        run: |
+          sudo rm -f /etc/apt/sources.list.d/{azure-cli.sources,microsoft-prod.list,ondrej-ubuntu-php-noble.sources}
+          sudo apt-get -o Dpkg::Use-Pty=0 update
+          sudo apt-get -o Dpkg::Use-Pty=0 install \
+            pandoc texlive-latex-base texlive-latex-recommended \
+            librsvg2-bin texlive-latex-extra zip
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: ${{ env.MDBOOK_VERSION }}
+
+
+      - name: build all formats
+        run: |
+          source $HOME/.cargo/env
+
+          mdbook build
+          rm -f book/Makefile book/*.pl book/*.sh book/*.toml book/*.yml book/*.yaml book/*.lua book/*.md book/*.txt book/*.json
+          rm -f book/*.pdf book/*.epub book/*.zip
+          rm -rf book/everything-curl/ book/.git/ book/.github/
+          rm -rf book/.gitignore book/checkmd book/mgrep book/index-words
+          zip -r "her-yönüyle-curl-mdbook-${{ github.ref_name }}.zip" book/
+          rm -rf book/
+
+          make pdf
+          mv everything-curl.pdf "her-yönüyle-curl-${{ github.ref_name }}.pdf"
+
+          make epub
+          mv everything-curl.epub "her-yönüyle-curl-${{ github.ref_name }}.epub"
+
+          make everything-curl.html
+          mv everything-curl.zip "her-yönüyle-curl-html-${{ github.ref_name }}.zip"
+
+      - name: create release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: |
+            ## Her Yönüyle curl - ${{ github.ref_name }}
+            
+            Bu sürüm aşağıdaki formatlarda sunulmaktadır:
+            
+            - **Web**: Kitabın [web](https://fr0stb1rd.github.io/her-yonuyle-curl/) sürümü.
+            - **.pdf**: Kitabın PDF sürümü.
+            - **.epub**: E-kitap okuyucular için EPUB sürümü.
+            - **-html.zip**: Pandoc ile oluşturulmuş, görselleri içeren tek sayfalık HTML sürümü.
+            - **-mdbook.zip**: mdBook ile oluşturulmuş, çok sayfalı ve interaktif web sürümü.
+          files: |
+            her-yönüyle-curl-${{ github.ref_name }}.pdf
+            her-yönüyle-curl-${{ github.ref_name }}.epub
+            her-yönüyle-curl-html-${{ github.ref_name }}.zip
+            her-yönüyle-curl-mdbook-${{ github.ref_name }}.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
